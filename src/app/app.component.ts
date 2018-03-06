@@ -5,8 +5,12 @@ import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument 
  
  
  interface Post { 
-   title: string; 
-   content: string; 
+   Fname: string; 
+   Lname: string;
+   Phone: string;
+   Mobile: string;
+   email: string;
+   address: string; 
  } 
  interface PostId extends Post { 
    id: string; 
@@ -25,8 +29,12 @@ import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument 
    posts: any; 
  
  
-   title:string; 
-   content:string; 
+   Fname:string; 
+   Lname:string;
+    Phone: string;
+   Mobile: string;
+   email: string;
+   address: string;  
  
  
    postDoc: AngularFirestoreDocument<Post>; 
@@ -53,7 +61,7 @@ import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument 
  
  
    addPost() { 
-     this.afs.collection('posts').add({'title': this.title, 'content': this.content}); 
+     this.afs.collection('posts').add({'Fname': this.Fname, 'Lname': this.Lname, 'Phone': this.Phone, 'Mobile': this.Mobile, 'email': this.email, 'address': this.address}); 
    } 
  
  
@@ -66,5 +74,5 @@ import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument 
  
    deletePost(postId) { 
      this.afs.doc('posts/'+postId).delete(); 
-   } 
+   }
  } 
